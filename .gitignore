@@ -16,3 +16,7 @@
 !gradlew
 !gradlew.bat
 !**/*.gradle
+
+# Whitelist source
+!src
+!src/**
