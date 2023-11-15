@@ -8,6 +8,41 @@
         <title>Todo Application</title>
     </head>
     <body style="height: 100%; padding: 0;">
-        Initial Page
+        <h2>Todos</h2>
+        <form>
+            <label for="todo"><!--/**/--></label>
+            <input id="todo" type="text" placeholder="Something to remember..." />
+            <input type="submit" value="Add" />
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Todo</th>
+                    <th>Actions</th>
+                </tr>
+            <tbody>
+                <tr>
+                    <td>Pickup eggs...</td>
+                    <td>
+                        <button>Delete</button>
+                        <button>Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Buy milk...</td>
+                    <td>
+                        <button>Delete</button>
+                        <button>Complete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Get gas...</td>
+                    <td>
+                        <button>Delete</button>
+                        <button>Complete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </body>
 </html>
