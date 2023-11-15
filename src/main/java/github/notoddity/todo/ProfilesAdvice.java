@@ -12,7 +12,7 @@ import java.util.List;
 
 @ControllerAdvice
 @AllArgsConstructor
-public class EnvironmentAdvice {
+public class ProfilesAdvice {
 
   @Nonnull
   private final Environment environment;
@@ -20,6 +20,6 @@ public class EnvironmentAdvice {
   @ModelAttribute
   public void environmentAttributes(@Nonnull final Model model) {
     List<String> activeProfiles = Arrays.asList(environment.getActiveProfiles());
-    model.addAttribute("liveReload", activeProfiles.contains("liveReload"));
+    model.addAttribute("profiles", activeProfiles);
   }
 }

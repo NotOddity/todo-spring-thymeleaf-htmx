@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<!--IntelliJ Suppression-->
+<!--/* IntelliJ Suppression-->
 <!--suppress HtmlRequiredTitleElement (dashboard/index.html is not navigable.)-->
 <!--suppress JSUnresolvedLibraryURL (livereload.js is provided by springboot on run.)-->
+<!--*/-->
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-    <!--Thymeleaf Vars-->
-    <!--@thymesVar id="environment" type="java.lang.Boolean"-->
+    <!--/*Thymeleaf Vars*/-->
+    <!--/*@thymesVar id="profiles" type="java.util.List"*/-->
     <head>
         <!--/* meta */-->
         <meta charset="UTF-8">
@@ -20,11 +21,11 @@
         <script type="text/javascript" th:src="@{/js/htmx/htmx.min.js}" defer></script>
 
         <!--/* SpringBoot DevTools Hot Reload */-->
-        <script th:if="${environment}" src="http://localhost:35729/livereload.js" defer></script>
+        <script th:if="${profiles.contains('liveReload')}" src="http://localhost:35729/livereload.js" defer></script>
     </head>
     <body>
-        <!--TODO: Center and style index page-->
-        <!--TODO: Add HREF to SpringBoot, Thymeleaf, and HTMX-->
+        <!--/*TODO: Center and style index page */-->
+        <!--/*TODO: Add HREF to SpringBoot, Thymeleaf, and HTMX */-->
         <h2>Todo Application</h2>
         <h3>Using SpringBoot, Thymeleaf, and HTMX</h3>
     </body>
