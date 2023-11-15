@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!--IntelliJ Suppression-->
+<!--suppress HtmlRequiredTitleElement (dashboard/index.html is not navigable.)-->
+<!--suppress JSUnresolvedLibraryURL (livereload.js is provided by springboot on run.)-->
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <!--Thymeleaf Vars-->
+    <!--@thymesVar id="environment" type="java.lang.Boolean"-->
+    <head>
+        <!--/* meta */-->
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width" />
 
-</body>
+        <!--/* stylesheets */-->
+        <link rel="stylesheet" th:href="@{/css/style.css}" />
+
+        <!--/* libs */-->
+        <script type="text/javascript" th:src="@{/js/htmx/htmx.min.js}" defer></script>
+
+        <!--/* SpringBoot DevTools Hot Reload */-->
+        <script th:if="${environment}" src="http://localhost:35729/livereload.js" defer></script>
+    </head>
+    <body>
+        <!--TODO: Center and style index page-->
+        <!--TODO: Add HREF to SpringBoot, Thymeleaf, and HTMX-->
+        <h2>Todo Application</h2>
+        <h3>Using SpringBoot, Thymeleaf, and HTMX</h3>
+    </body>
 </html>
