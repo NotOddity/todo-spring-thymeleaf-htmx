@@ -14,32 +14,26 @@
             <input id="todo" type="text" placeholder="Something to remember..." />
             <input type="submit" value="Add" />
         </form>
-        <table>
+        <h3>Todo List</h3>
+        <h4 th:if="${todos.isEmpty()}">No Todos</h4>
+        <table th:if="${!todos.isEmpty()}">
             <thead>
                 <tr>
                     <th>Todo</th>
                     <th>Actions</th>
                 </tr>
             <tbody>
-                <tr>
-                    <td>Pickup eggs...</td>
+                <tr th:each="todo : ${todos}">
+                    <td th:text="${todo.getDescription()}">Todo description</td>
                     <td>
-                        <button>Delete</button>
-                        <button>Complete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Buy milk...</td>
-                    <td>
-                        <button>Delete</button>
-                        <button>Complete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Get gas...</td>
-                    <td>
-                        <button>Delete</button>
-                        <button>Complete</button>
+                        <form method="post" th:action="@{/todos/delete}" th:object="${Long}">
+                            <input type="hidden" th:value="${todo.getId()}" />
+                            <input type="submit" value="Delete" />
+                        </form>
+                        <form method="post" th:action="@{/todos/complete}" th:object="${Long}">
+                            <input type="hidden" th:value="${todo.getId()}" />
+                            <input type="submit" value="Complete" />
+                        </form>
                     </td>
                 </tr>
             </tbody>
